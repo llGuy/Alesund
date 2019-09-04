@@ -32,8 +32,8 @@ int CALLBACK WinMain(HINSTANCE hinstance, HINSTANCE previous_instance, LPSTR cmd
 {
 	g_running = 0;
 
-	const char* window_class_name = "alesund_window_class";
-	const char* window_name = "Alesund";
+	const char *window_class_name = "alesund_window_class";
+	const char *window_name = "Alesund";
 
 	WNDCLASS window_class = {};
 	window_class.style = CS_OWNDC | CS_VREDRAW | CS_HREDRAW;
