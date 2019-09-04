@@ -119,7 +119,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Code\game.cpp" />
+    <ClCompile Include="Code\opengl_context.cpp" />
     <ClCompile Include="Code\win32_core.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Code\game.hpp" />
+    <ClInclude Include="Code\opengl_context.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

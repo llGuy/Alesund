@@ -1,2 +1,4 @@
-﻿  win32_core.cpp
+﻿  opengl_context.cpp
+  win32_core.cpp
+  Generating Code...
   Alesund.vcxproj -> C:\gamedev\Alesund\x64\Debug\Alesund.exe
