@@ -58,7 +58,10 @@ int CALLBACK WinMain(HINSTANCE hinstance, HINSTANCE previous_instance, LPSTR cmd
 
 	assert(window);
 
+	game_memory_t game = {};
+
 	initialize_opengl_context(window);
+	initialize_game(&game);
 
 	ShowWindow(window, showcmd);
 
@@ -74,7 +77,7 @@ int CALLBACK WinMain(HINSTANCE hinstance, HINSTANCE previous_instance, LPSTR cmd
 			DispatchMessage(&message);
 		}
 
-		update_game();
+		tick_game(&game);
 	}
 
 	return 0;

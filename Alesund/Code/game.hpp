@@ -4,10 +4,12 @@
 
 struct game_memory_t
 {
-	vertex_buffer_t triangle_vertices;
+	gpu_buffer_t triangle_vbo;
+	vertex_layout_t triangle_layout;
+	gpu_program_t triangle_program;
 };
 
-void initialize_game();
+void initialize_game(game_memory_t *game);
 
 // Render + update
-void update_game();
+void tick_game(game_memory_t *game);
