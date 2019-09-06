@@ -5,11 +5,14 @@
 
 typedef unsigned int gpu_buffer_t;
 typedef unsigned int vertex_layout_t;
+typedef unsigned int index_layout_t;
 typedef unsigned int gpu_program_t;
 
 gpu_buffer_t create_gpu_buffer();
 void bind_gpu_buffer(GLenum target, gpu_buffer_t buffer);
 void update_gpu_buffer(GLenum target, void *data, int data_size, GLenum usage);
+void update_gpu_buffer(GLenum target, uint32_t offset, uint32_t size, void* data);
+void reserve_buffer(GLsizeiptr size, GLenum usage);
 
 vertex_layout_t create_vertex_layout();
 void bind_vertex_layout(vertex_layout_t layout);

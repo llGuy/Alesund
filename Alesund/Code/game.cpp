@@ -14,6 +14,9 @@ void initialize_game(game_memory_t *memory)
 	float vertices[] = { -0.5f, -0.5f, 0.0f, +0.5f, +0.5f, -0.5f };
 	update_gpu_buffer(GL_ARRAY_BUFFER, vertices, sizeof(vertices), GL_STATIC_DRAW);
 
+	// Create square's vertex buffer
+	memory->square_vbo = create_gpu_buffer();
+
 	// Create vertex layout
 	memory->triangle_layout = create_vertex_layout();
 	bind_vertex_layout(memory->triangle_layout);

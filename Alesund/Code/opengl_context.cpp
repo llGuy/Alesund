@@ -4,6 +4,7 @@
 #include <wglext.h>
 #include <glext.h>
 #include <cstring>
+#include <stdint.h>
 
 #include "opengl_context.hpp"
 
@@ -33,6 +34,7 @@ DECLARE_GL_PROC(PFNGLGETSHADERINFOLOGPROC, glGetShaderInfoLog);
 DECLARE_GL_PROC(PFNGLGETPROGRAMINFOLOGPROC, glGetProgramInfoLog);
 DECLARE_GL_PROC(PFNGLATTACHSHADERPROC, glAttachShader);
 DECLARE_GL_PROC(PFNGLDETACHSHADERPROC, glDetachShader);
+DECLARE_GL_PROC(PFNGLBUFFERSUBDATAPROC, glBufferSubData);
 
 gpu_buffer_t create_gpu_buffer()
 {
@@ -51,6 +53,18 @@ void update_gpu_buffer(GLenum target, void* data, int data_size, GLenum usage)
 {
 	glBufferData(target, data_size, data, usage);
 }
+
+void update_gpu_buffer(GLenum target, uint32_t offset, uint32_t size, void* data)
+{
+	glBufferSubData(target, offset, size, data);
+}
+
+void reserve_buffer(GLenum target, GLsizeiptr size, GLenum usage, gpu_buffer_t buffer)
+{
+	bind_gpu_buffer(target, buffer);
+	glBufferData(target, size, 0, usage);
+}
+
 
 vertex_layout_t create_vertex_layout()
 {
@@ -73,6 +87,7 @@ void define_attribute_layout(int attribute_index, int size, GLenum type, int str
 {
 	glVertexAttribPointer(attribute_index, size, type, GL_FALSE, stride, (void *)starting_pointer);
 }
+
 
 gpu_program_t create_gpu_program(shader_source_t* sources, int source_count)
 {
