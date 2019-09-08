@@ -1,7 +1,2 @@
-﻿  game.cpp
-  opengl_context.cpp
-C:\gamedev\Alesund\Alesund\Code\opengl_context.cpp(74,95): warning C4312:  'type cast': conversion from 'int' to 'void *' of greater size
-  win32_core.cpp
-  Generating Code...
-C:\gamedev\Alesund\Alesund\Code\opengl_context.cpp(89,53): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  opengl_context.cpp
   Alesund.vcxproj -> C:\gamedev\Alesund\x64\Debug\Alesund.exe

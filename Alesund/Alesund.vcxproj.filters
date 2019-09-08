@@ -32,5 +32,12 @@
     <ClInclude Include="Code\game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Code\platform_core.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Code\Shaders\phong_lighting.vert" />
+    <None Include="Code\Shaders\phong_lighting.frag" />
   </ItemGroup>
 </Project>
